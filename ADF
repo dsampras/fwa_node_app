@@ -1,0 +1,25 @@
+{
+  "annotations":   {
+    "com.nokia.app_name": "testapp",
+    "com.nokia.embedded_rootfs": true,
+    "com.nokia.app_version": "1.0",
+    "com.nokia.unprivileged": false,
+    "com.nokia.embedded_package":     {
+      "name": "rootfs.tar.gz",
+      "type": "tar"
+    }
+  },
+  "hostname": "NOS",
+  "config":   {
+    "Env": [],
+    "Cmd": ["node /testapp/hello_node.js"]
+  },
+  "network": {"type": "share"},
+  "linux": {"resources":   {
+    "memory": {"limit": "200M"},
+    "cpu":     {
+      "quota": "1",
+      "period": "100"
+    }
+  }}
+}
